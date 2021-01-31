@@ -1,3 +1,23 @@
+<?php
+require 'functions.php';
+if (isset($_POST["submit"])) {
+    if (tambah($_POST) > 0) {
+        echo "
+        <script>
+        alert('data berhasil ditambahkan');
+        document.location.href = 'index.php;
+        </script>
+        ";
+    }
+
+    echo "
+    <script>
+    alert('data gagal ditambahkan');
+    document.location.href = 'index.php;
+    </script>
+    ";
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -41,19 +61,19 @@
                     <div class="tombol">
                         <button class="btn tambah" onclick="muncul()">+Tambah</button>
                         <select class="custom-select select" name="pilihan" id="pilihan">
-                            <option selected value="1">All</option>
-                            <option selected value="2">Matematika 3</option>
-                            <option selected value="3">Sinyal dan Sistem</option>
-                            <option selected value="4">Sensor dan Aktuator</option>
-                            <option selected value="5">Organisasi Mesin dan Bahasa Assembly</option>
-                            <option selected value="6">Bahasa Pemrograman</option>
-                            <option selected value="7">Algoritma dan Struktur Data</option>
-                            <option selected value="8">Managemen dan Kewirausahaan</option>
-                            <option selected value="9">Praktikum Sinyal dan Sistem</option>
-                            <option selected value="10">Praktikum Sensor dan Aktuator</option>
-                            <option selected value="11">Praktikum Organisasi Mesin dan Bahasa Assembly</option>
-                            <option selected value="12">Praktikum Bahasa Pemrograman</option>
-                            <option selected value="13">Praktikum Algoritma dan Struktur Data</option>
+                            <option selected value="1">pilih matkul</option>
+                            <option value="Matematika 3">Matematika 3</option>
+                            <option value="Sinyal dan Sistem">Sinyal dan Sistem</option>
+                            <option value="Sensor dan Aktuator">Sensor dan Aktuator</option>
+                            <option value="Organisasi Mesin dan Bahasa Assembly">Organisasi Mesin dan Bahasa Assembly</option>
+                            <option value="Bahasa Pemrograman">Bahasa Pemrograman</option>
+                            <option value="Algoritma dan Struktur Data">Algoritma dan Struktur Data</option>
+                            <option value="Managemen dan Kewirausahaan">Managemen dan Kewirausahaan</option>
+                            <option value="Praktikum Sinyal dan Sistem">Praktikum Sinyal dan Sistem</option>
+                            <option value="Praktikum Sensor dan Aktuator">Praktikum Sensor dan Aktuator</option>
+                            <option value="Praktikum Organisasi Mesin dan Bahasa Assembly">Praktikum Organisasi Mesin dan Bahasa Assembly</option>
+                            <option value="Praktikum Bahasa Pemrograman">Praktikum Bahasa Pemrograman</option>
+                            <option value="Praktikum Algoritma dan Struktur Data">Praktikum Algoritma dan Struktur Data</option>
                         </select>
                         <button class="btn tanggal">21-01-2021</button>
                     </div>
@@ -99,35 +119,35 @@
 
     <div class="kolom_tambah" id="kolom_tambahan">
         <h2>Tambah Tugas</h2>
-        <form action="">
+        <form action="" method="POST">
             <div class="form-group">
                 <label for="">Judul Tugas</label>
-                <input type="text" class="form-control">
+                <input type="text" name="judul" id="judul" class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="">Deadline</label>
-                <input type="text" class="form-control datepicker" id="tanggal" name="tanggal" placeholder="d-m-y">
+                <input type="text" class="form-control datepicker" id="deadline" name="deadline" placeholder="d-m-y">
             </div>
 
             <div class="form-group">
                 <label for="">Mata Kuliah</label>
-                <select name="matkul" id="" class="form-control">
+                <select name="mata_kuliah" id="" class="form-control">
                     <option selected value="1">pilih matkul</option>
-                    <option value="2">Matematika 3</option>
-                    <option value="3">Sinyal dan Sistem</option>
-                    <option value="4">Sensor dan Aktuator</option>
-                    <option value="5">Organisasi Mesin dan Bahasa Assembly</option>
-                    <option value="6">Bahasa Pemrograman</option>
-                    <option value="7">Algoritma dan Struktur Data</option>
-                    <option value="8">Managemen dan Kewirausahaan</option>
-                    <option value="9">Praktikum Sinyal dan Sistem</option>
-                    <option value="10">Praktikum Sensor dan Aktuator</option>
-                    <option value="11">Praktikum Organisasi Mesin dan Bahasa Assembly</option>
-                    <option value="12">Praktikum Bahasa Pemrograman</option>
-                    <option value="13">Praktikum Algoritma dan Struktur Data</option>
+                    <option value="Matematika 3">Matematika 3</option>
+                    <option value="Sinyal dan Sistem">Sinyal dan Sistem</option>
+                    <option value="Sensor dan Aktuator">Sensor dan Aktuator</option>
+                    <option value="Organisasi Mesin dan Bahasa Assembly">Organisasi Mesin dan Bahasa Assembly</option>
+                    <option value="Bahasa Pemrograman">Bahasa Pemrograman</option>
+                    <option value="Algoritma dan Struktur Data">Algoritma dan Struktur Data</option>
+                    <option value="Managemen dan Kewirausahaan">Managemen dan Kewirausahaan</option>
+                    <option value="Praktikum Sinyal dan Sistem">Praktikum Sinyal dan Sistem</option>
+                    <option value="Praktikum Sensor dan Aktuator">Praktikum Sensor dan Aktuator</option>
+                    <option value="Praktikum Organisasi Mesin dan Bahasa Assembly">Praktikum Organisasi Mesin dan Bahasa Assembly</option>
+                    <option value="Praktikum Bahasa Pemrograman">Praktikum Bahasa Pemrograman</option>
+                    <option value="Praktikum Algoritma dan Struktur Data">Praktikum Algoritma dan Struktur Data</option>
                 </select>
-                <button class="btn btn-kolom tambah">Tambah</button>
+                <button class="btn btn-kolom tambah" type="submit" name="submit">Tambah</button>
             </div>
         </form>
     </div>
