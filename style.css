@@ -1,0 +1,133 @@
+/*header*/
+.web {
+    margin-top: 25px;
+    max-width: 200px;
+}
+.card {
+    background-color: #71ACE3;
+    color: white;
+    height: 87px;
+}
+
+.profil {
+    float: right;
+    margin-top: -40px;
+}
+
+.foto {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+.profil h5 {
+    float: right;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+/*akhir header*/
+
+/*awal banner*/
+.banner img{
+    width: 100%;
+    margin-top: 10px;
+}
+
+/*akhir banner*/
+
+/*awal main*/
+.tambah {
+    background-color: #6CE67E;
+    color: white;
+    margin-top: 10px;
+    float: left;
+    box-shadow: 1px 1px #C0C0C0;
+}
+
+.select {
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    float: left;
+    border-radius: 5px;
+    margin-left: 10px;
+    box-shadow: 1px 1px #C0C0C0;
+}
+
+.tanggal {
+    margin-top: 10px;
+    float: right;
+    background-color: white;
+    border: 1px solid #C0C0C0;
+    box-shadow: 1px 1px #C0C0C0;
+}
+.tugas{
+    margin-top: 70px;
+}
+
+.isi {
+    width: 100%;
+    height: 126px;
+    margin-top: 20px;
+    padding:0 10px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #C0C0C0;
+    box-shadow: 1px 1px #C0C0C0;
+}
+
+hr {
+    border-color: black;
+}
+
+.atas p {
+    float: right;
+    margin-top: -30px;
+    line-height: normal;
+}
+
+.btn-selesai, .deadline {
+    float: right;
+}
+
+.btn-selesai{
+    margin-top: -5px;
+    line-height: normal;
+    background-color: #C0C0C0;
+}
+
+
+.deadline {
+    margin-right: 10px;
+}
+
+.kanan {
+    margin-top: -40px;
+}
+
+/*akir main*/
+
+/*awal kolom tambah */
+.kolom_tambah { 
+    z-index: 2;
+    top: 200px;
+    bottom: 100px;
+    right: 400px;
+    left: 400px;
+    background-color:white;
+    position: fixed;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #C0C0C0;
+    box-shadow: 3px 3px #C0C0C0;
+    display: none;
+}
+
+.btn-kolom {
+    background-color: #6CE67E;
+    color: white;
+    margin-top: 10px;
+    float: right;
+    box-shadow: 1px 1px #C0C0C0;
+}
+/*akhir kolom tambah */
