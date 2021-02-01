@@ -1,11 +1,12 @@
 <?php
 require 'functions.php';
+$data = query("SELECT * FROM tugas");
 if (isset($_POST["submit"])) {
     if (tambah($_POST) > 0) {
         echo "
         <script>
         alert('data berhasil ditambahkan');
-        document.location.href = 'index.php;
+        document.location.href = 'index.php';
         </script>
         ";
     }
@@ -13,7 +14,7 @@ if (isset($_POST["submit"])) {
     echo "
     <script>
     alert('data gagal ditambahkan');
-    document.location.href = 'index.php;
+    document.location.href = 'index.php';
     </script>
     ";
 }
@@ -79,35 +80,24 @@ if (isset($_POST["submit"])) {
                     </div>
                 </div>
                 <div class="tugas">
-                    <div class="isi">
-                        <div class="atas">
-                            <h2>Tugas 1: Praktikum 3</h2>
-                            <p>7 hari lagi</p>
-                        </div>
-                        <hr>
-                        <div class="bawah">
-                            <p>organisasi mesin dan bahasa assembly</p>
-                            <div class="kanan">
-                                <button class="btn btn-selesai">selesai</button>
-                                <p class="deadline">deadline: 21-01-2021</p>
+                    <?php $i = 1; ?>
+                    <?php foreach ($data as $row) : ?>
+                        <div class="isi">
+                            <div class="atas">
+                                <h2>Tugas <?= $i ?>: <?= $row["judul"]; ?></h2>
+                                <p>7 hari lagi</p>
+                            </div>
+                            <hr>
+                            <div class="bawah">
+                                <p><?= $row["mata_kuliah"]; ?></p>
+                                <div class="kanan">
+                                    <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('apakah yakin ingin menghapus?')" class="btn btn-selesai">selesai</a>
+                                    <p class="deadline">deadline: <?= $row["deadline"]; ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="isi">
-                        <div class="atas">
-                            <h2>Tugas 1: Praktikum 3</h2>
-                            <p>7 hari lagi</p>
-                        </div>
-                        <hr>
-                        <div class="bawah">
-                            <p>organisasi mesin dan bahasa assembly</p>
-                            <div class="kanan">
-                                <button class="btn btn-selesai">selesai</button>
-                                <p class="deadline">deadline: 21-01-2021</p>
-                            </div>
-                        </div>
-                    </div>
+                        <?php $i++ ?>
+                    <?php endforeach; ?>
                 </div>
 
                 <br>
