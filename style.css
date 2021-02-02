@@ -44,6 +44,15 @@
     box-shadow: 1px 1px #C0C0C0;
 }
 
+.cari {
+    background-color: #acacac;
+    color: black;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+    box-shadow: 1px 1px #C0C0C0;
+}
+
 .select {
     width: 200px;
     height: 40px;

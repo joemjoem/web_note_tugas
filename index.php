@@ -18,6 +18,15 @@ if (isset($_POST["submit"])) {
     </script>
     ";
 }
+
+//pilihan
+if (isset($_POST["cari"])) {
+    if ($_POST["pilihan"] == "0") {
+        $data = query("SELECT * FROM tugas");
+    } else {
+        $data = cari($_POST["pilihan"]);
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -61,21 +70,24 @@ if (isset($_POST["submit"])) {
                 <div class="main">
                     <div class="tombol">
                         <button class="btn tambah" onclick="muncul()">+Tambah</button>
-                        <select class="custom-select select" name="pilihan" id="pilihan">
-                            <option selected value="1">pilih matkul</option>
-                            <option value="Matematika 3">Matematika 3</option>
-                            <option value="Sinyal dan Sistem">Sinyal dan Sistem</option>
-                            <option value="Sensor dan Aktuator">Sensor dan Aktuator</option>
-                            <option value="Organisasi Mesin dan Bahasa Assembly">Organisasi Mesin dan Bahasa Assembly</option>
-                            <option value="Bahasa Pemrograman">Bahasa Pemrograman</option>
-                            <option value="Algoritma dan Struktur Data">Algoritma dan Struktur Data</option>
-                            <option value="Managemen dan Kewirausahaan">Managemen dan Kewirausahaan</option>
-                            <option value="Praktikum Sinyal dan Sistem">Praktikum Sinyal dan Sistem</option>
-                            <option value="Praktikum Sensor dan Aktuator">Praktikum Sensor dan Aktuator</option>
-                            <option value="Praktikum Organisasi Mesin dan Bahasa Assembly">Praktikum Organisasi Mesin dan Bahasa Assembly</option>
-                            <option value="Praktikum Bahasa Pemrograman">Praktikum Bahasa Pemrograman</option>
-                            <option value="Praktikum Algoritma dan Struktur Data">Praktikum Algoritma dan Struktur Data</option>
-                        </select>
+                        <form action="" method="POST">
+                            <select class="custom-select select" name="pilihan" id="pilihan">
+                                <option selected value="0">ALL</option>
+                                <option value="Matematika 3">Matematika 3</option>
+                                <option value="Sinyal dan Sistem">Sinyal dan Sistem</option>
+                                <option value="Sensor dan Aktuator">Sensor dan Aktuator</option>
+                                <option value="Organisasi Mesin dan Bahasa Assembly">Organisasi Mesin dan Bahasa Assembly</option>
+                                <option value="Bahasa Pemrograman">Bahasa Pemrograman</option>
+                                <option value="Algoritma dan Struktur Data">Algoritma dan Struktur Data</option>
+                                <option value="Managemen dan Kewirausahaan">Managemen dan Kewirausahaan</option>
+                                <option value="Praktikum Sinyal dan Sistem">Praktikum Sinyal dan Sistem</option>
+                                <option value="Praktikum Sensor dan Aktuator">Praktikum Sensor dan Aktuator</option>
+                                <option value="Praktikum Organisasi Mesin dan Bahasa Assembly">Praktikum Organisasi Mesin dan Bahasa Assembly</option>
+                                <option value="Praktikum Bahasa Pemrograman">Praktikum Bahasa Pemrograman</option>
+                                <option value="Praktikum Algoritma dan Struktur Data">Praktikum Algoritma dan Struktur Data</option>
+                            </select>
+                            <button class="btn tambah cari" name="cari">cari</button>
+                        </form>
                         <button class="btn tanggal">21-01-2021</button>
                     </div>
                 </div>
@@ -122,7 +134,7 @@ if (isset($_POST["submit"])) {
 
             <div class="form-group">
                 <label for="">Mata Kuliah</label>
-                <select name="mata_kuliah" id="" class="form-control">
+                <select name="mata_kuliah" id="mata_kuliah" class="form-control">
                     <option selected value="1">pilih matkul</option>
                     <option value="Matematika 3">Matematika 3</option>
                     <option value="Sinyal dan Sistem">Sinyal dan Sistem</option>

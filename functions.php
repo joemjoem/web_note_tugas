@@ -36,3 +36,12 @@ function hapus($id)
     mysqli_query($conn, "DELETE FROM tugas WHERE id= $id");
     return mysqli_affected_rows($conn);
 }
+
+function cari($pilihan)
+{
+    $query = "SELECT * FROM tugas 
+             WHERE
+             mata_kuliah = '$pilihan';
+            ";
+    return query($query);
+}
